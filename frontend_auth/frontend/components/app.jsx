@@ -14,6 +14,6 @@ export default () => (
     <Route exact path="/" component={Home} />
     <ProtectedRoute path="/chirps" component={ChirpIndexContainer} />
     <AuthRoute exact path="/signup" component={SignupContainer} />
-    <Route exact path="/login" component={LoginContainer} />
+    <AuthRoute exact path="/login" component={LoginContainer} />
   </div>
 );

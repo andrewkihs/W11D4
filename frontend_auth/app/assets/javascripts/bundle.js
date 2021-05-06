@@ -307,7 +307,7 @@ exports.default = function () {
     _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _home2.default }),
     _react2.default.createElement(_route_utils.ProtectedRoute, { path: '/chirps', component: _chirp_index_container2.default }),
     _react2.default.createElement(_route_utils.AuthRoute, { exact: true, path: '/signup', component: _signup_container2.default }),
-    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/login', component: _login_container2.default })
+    _react2.default.createElement(_route_utils.AuthRoute, { exact: true, path: '/login', component: _login_container2.default })
   );
 };
 
