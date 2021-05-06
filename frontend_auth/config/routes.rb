@@ -6,7 +6,7 @@ Rails.application.routes.draw do
       resources :chirps, only: [:index]
     end
 
-    resource :session, only: [:create, :destroy]
+    resources :session, only: [:create, :destroy]
 
     post '/search', to: 'users#search'
 
