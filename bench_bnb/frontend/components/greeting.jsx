@@ -11,7 +11,7 @@ class Greeting extends React.Component {
     debugger
     const display = currentUser ? (
       <div>
-        <p>Hello, {currentUser.username}</p>
+        <p>Welcome, {currentUser.username}</p>
         <button onClick={this.props.logout}>Log Out</button>
       </div>
     ) : (
