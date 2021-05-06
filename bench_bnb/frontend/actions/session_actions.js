@@ -1,10 +1,11 @@
-import { signup, login, logout } from "../util/session_api_util";
+import { signupUser, loginUser, logoutUser } from "../util/session_api_util";
 
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_ERRORS";
 
 //action creator
+
 const receiveCurrentUser = (user) => ({
   type: RECEIVE_CURRENT_USER,
   user,
@@ -15,21 +16,15 @@ const logoutCurrentUser = () => ({
 });
 
 const receiveErrors = (errors) => ({
-  type: RECEIVE_ERRORS,
+  type: RECEIVE_SESSION_ERRORS,
 });
 
 // thunks
-export const signupUser = (formUser) => (dispatch) =>
-  signup(formUser).then((user) => dispatch(receiveCurrentUser(user)));
+export const signup = (formUser) => (dispatch) =>
+  signupUser(formUser).then((user) => dispatch(receiveCurrentUser(user)));
 
-export const loginUser = (formUser) => (dispatch) =>
-  login(formUser).then(
-    (user) => dispatch(receiveCurrentUser(user)),
-    (errors) => dispatch(receiveErrors(errors))
-  );
+export const login = (formUser) => (dispatch) =>
+  loginUser(formUser).then((user) => dispatch(receiveCurrentUser(user)));
 
-export const logoutUser = () => (dispatch) =>
-  logout().then(
-    () => dispatch(logoutCurrentUser()),
-    (errors) => dispatch(receiveErrors(errors))
-  );
+export const logout = () => (dispatch) =>
+  logoutUser().then(() => dispatch(logoutCurrentUser()));
