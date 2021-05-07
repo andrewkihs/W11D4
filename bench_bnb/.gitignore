@@ -2,3 +2,32 @@ config/master.key
 Gemfile.lock
 /tmp/
 log/
+# Ignore master key for decrypting credentials and more.
+/config/master.key
+config/credentials.yml.enc
+# Ignore application configuration
+/config/application.yml
+
+config/credentials.yml.enc
+
+/.bundle
+bundle.js
+bundle.js.map
+# Ignore all logfiles and tempfiles.
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+# Ignore uploaded files in development
+/storage/*
+!/storage/.keep
+
+/node_modules
+/yarn-error.log
+
+/public/assets
+.byebug_history
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key

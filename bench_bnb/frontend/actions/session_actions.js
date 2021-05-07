@@ -17,14 +17,24 @@ const logoutCurrentUser = () => ({
 
 const receiveErrors = (errors) => ({
   type: RECEIVE_SESSION_ERRORS,
+  errors,
 });
 
 // thunks
 export const signup = (formUser) => (dispatch) =>
-  signupUser(formUser).then((user) => dispatch(receiveCurrentUser(user)));
+  signupUser(formUser).then(
+    (user) => dispatch(receiveCurrentUser(user)),
+    (errors) => dispatch(receiveErrors(errors.responseJSON))
+  );
 
 export const login = (formUser) => (dispatch) =>
-  loginUser(formUser).then((user) => dispatch(receiveCurrentUser(user)));
+  loginUser(formUser).then(
+    (user) => dispatch(receiveCurrentUser(user)),
+    (errors) => dispatch(receiveErrors(errors.responseJSON))
+  );
 
 export const logout = () => (dispatch) =>
-  logoutUser().then(() => dispatch(logoutCurrentUser()));
+  logoutUser().then(
+    () => dispatch(logoutCurrentUser()),
+    (errors) => dispatch(receiveErrors(errors.responseJSON))
+  );
