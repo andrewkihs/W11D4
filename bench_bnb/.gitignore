@@ -1,10 +1,2 @@
-node_modules/
-/node_modules
-/yarn-error.log
-
-.byebug_history
-package-lock.json
+config/master.key
 Gemfile.lock
-/.bundle
-bundle.js
-bundle.js.map

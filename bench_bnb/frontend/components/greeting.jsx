@@ -8,7 +8,7 @@ class Greeting extends React.Component {
 
   render() {
     let currentUser = this.props.currentUser;
-    debugger
+
     const display = currentUser ? (
       <div>
         <p>Welcome, {currentUser.username}</p>

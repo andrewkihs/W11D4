@@ -29,7 +29,7 @@ class SessionForm extends React.Component {
   render() {
 
 
-  debugger
+  // debugger
     let disp_string = this.props.formType ==='login' ? disp_string = 'Log In' : disp_string = 'Sign Up'
     return(
     <div className="session-form">
